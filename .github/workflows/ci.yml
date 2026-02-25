@@ -1,4 +1,4 @@
-name: .NET CI Pipeline
+name: .NET CI
 
 on:
   push:
@@ -9,7 +9,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v3
 
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
@@ -17,10 +18,10 @@ jobs:
         dotnet-version: '8.0.x'
 
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore ./RA2PipelineDemo.sln
 
-    - name: Build
-      run: dotnet build --configuration Release --no-restore
+    - name: Build solution
+      run: dotnet build ./RA2PipelineDemo.sln --configuration Release --no-restore
 
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+    - name: Run tests
+      run: dotnet test ./RA2PipelineDemo.sln --no-build --verbosity normal
