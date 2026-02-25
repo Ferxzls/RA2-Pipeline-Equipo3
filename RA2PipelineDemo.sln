@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="RA2PipelineDemo.Tests/RA2PipelineDemo.Tests.csproj" Id="5ec3b5af-19ef-40ed-9744-0d4fd41db0fa" />
+  <Project Path="RA2PipelineDemo/RA2PipelineDemo.csproj" Id="7af7b195-70cb-4d54-98ca-5259b0bc0a45" />
+</Solution>
